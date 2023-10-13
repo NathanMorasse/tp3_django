@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Potager{% endblock %}
+
+{% block content %}
+{% load static %}
+
+<h2>Mon potager</h2>
+
+<p>Mon beau petit potager</p>
+
+<p>
+  <img class="img-thumbnail" src="{% static 'img/images.jpg' %}" alt="potager">
+</p>
+
+{% endblock %}

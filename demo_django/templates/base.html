@@ -1,0 +1,70 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <title>{% block title %}{% endblock %}</title>
+
+  <link rel="icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <link rel="stylesheet" type="text/css" href="{% static 'css/demo.css' %}" />
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'index' %}">Potager</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="{% url 'index' %}" class="nav-link text-dark">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="{% url 'fermiers' %}" class="nav-link text-dark">Fermiers</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="{% url 'jardin' %}" class="nav-link text-dark">Jardin</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          {% block content %}{% endblock %}
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="border-top footer text-muted">
+    <div class="container text-center">
+        &copy; 2023 - Programation Web "Le potager" - Nathan Morasse</a>
+    </div>
+  </footer>
+
+  <!-- Placed at the end of the document so the pages load faster -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"></script>
+</body>
+
+</html>

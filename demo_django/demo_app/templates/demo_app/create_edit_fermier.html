@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}create_edit_fermier{% endblock %}
+
+{% block content %}
+{% load static %}
+<div class="text-center">
+    <h1>{{action}} un fermier</h1>
+    <div class="form-section container mb-3">
+        <form method="post" action="{% url 'fermiers' %}">
+            {% csrf_token %}
+            {{form}}
+            <button name="{{action}}" value="id" type="submit" class="btn btn-primary">{{action}}</button>
+        </form>
+    </div>
+    <a href="{% url 'fermiers' %}" class="no-style">Retour à la liste des fermiers</a>
+</div>
+{% endblock %}

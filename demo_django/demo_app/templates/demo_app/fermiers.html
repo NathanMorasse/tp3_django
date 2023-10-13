@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block title %}fermiers{% endblock %}
+
+{% block content %}
+{% load static %}
+<div>
+    <div class="row">
+        <div class="col-12">
+            <div class="border-bottom Page-Head">
+                <h2 class="Center"><i class="fa-solid fa-list"></i> Liste des fermiers</h2>
+            </div>
+
+
+            <div>
+                <table class="table table-hover table-sm">
+                    <thead class="table-light">
+                        <tr>
+                            <th scope="col">Nom</th>
+                            <th scope="col">Prénom</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+                    {% for fermier in fermier_list %}
+                        <tr>
+                            <td>{{ fermier.prenom }}</td>
+                            <td>{{ fermier.nom }}</td>
+                            <td>
+                                <a name="edit" href="{% url 'create_edit_fermier' fermier.id %}" title="Modifier"><i class="fa-solid fa-pen-to-square"></i></a> |
+                                <a id="Delete" title="Supprimer" ><i class="fa-regular fa-trash-can"></i></a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="Center">
+                        <a href="{% url 'create_edit_fermier' 0 %}" class="btn btn-primary" role="button">Ajouter un fermier</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
